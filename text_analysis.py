@@ -28,12 +28,12 @@ with open('/Users/willdonner/DevsTest/result1.txt','r',encoding='UTF-8') as file
         words_box=[]
         for line in file1:
             if re.match(r'[A-Za-z]',line):
-                words_box.extend(line.strip().split())
+                words_box.extend(line.lower().strip().split())
                 box1=[]
                 box1 = collections.Counter(words_box)
                 str2 = str(words_box)
         #str3 = re.sub("[^A-Za-z\ ]", "", str2)
-        f.write("处理后的:%s"%collections.Counter(box1))
+        f.write("处理后的:%s"%box1)
         #str2=file1.read().strip(' ')
         #str1=str(re.sub("[^A-Za-z]", "", str2))
         #f.write("处理后的:%s"%collections.Counter(str2))
