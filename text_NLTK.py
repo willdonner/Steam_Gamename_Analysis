@@ -15,6 +15,7 @@ with open('/Users/willdonner/DevsTest/gametest.txt','r',encoding='utf-8') as fil
                 print("shuchu%s"%line)
         # f.write(str2)
         # f.write(str2)
+#使用pandas分析数据
         # box=[]
         # for line in file1:
         #     box.extend(line.lower().strip().split())
