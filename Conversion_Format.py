@@ -1,6 +1,7 @@
 #2017-10-18 by willdonner
 # 简单的实现文本预处理
 # 通过正则表达式[^A-Za-z\ ]只保留原文和空格 空格作为单词的分隔符
+# 
 import os
 import collections
 import re
