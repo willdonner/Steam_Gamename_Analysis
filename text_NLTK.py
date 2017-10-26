@@ -14,11 +14,13 @@ with open('/Users/willdonner/DevsTest/game_urls.csv','r',encoding='latin-1') as 
         str1=file1.read().lower()
         word_box.extend(nltk.word_tokenize(str1))
         # tokens = (nltk.word_tokenize(str1))
+        # english_punctuation = ['pack']
         english_word_stop = set(stopwords.words('english'))
         for i in word_box:
             if re.match(r'[A-Za-z]',i):
                 if i not in english_word_stop:
-                    box.append(i)
+                    # if i not in english_punctuation:
+                        box.append(i)
         str3 = str(box)
         str2=re.sub("[^A-Za-z/ ]", "", str3)
             #print(str2)

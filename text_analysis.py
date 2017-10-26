@@ -23,13 +23,14 @@ import re
 #     print('文件中总共有：%d行'%count)
 
 #用python自带的collections库做简单的文本分析和频率统计
-with open('/Users/willdonner/DevsTest/result1.txt','r',encoding='UTF-8') as file1:
+box1=[]
+words_box=[]
+with open('/Users/willdonner/DevsTest/stemm.txt','r',encoding='UTF-8') as file1:
     with open('/Users/willdonner/DevsTest/result.txt','w',encoding='UTF-8') as f:
-        words_box=[]
-        for line in file1:
+        str1 = file1.read()
+        for line in str1:
             if re.match(r'[A-Za-z]',line):
-                words_box.extend(line.lower().strip().split())
-                box1=[]
+                words_box.extend(line.lower().strip().split()) 
                 box1 = collections.Counter(words_box)
                 str2 = str(words_box)
         #str3 = re.sub("[^A-Za-z\ ]", "", str2)
