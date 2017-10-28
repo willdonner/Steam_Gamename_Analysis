@@ -1,3 +1,5 @@
+#2017-10-26 by willdonner
+#使用regexp 模块 并设置最小处理长度是6
 import os
 import re
 from nltk.stem.regexp import RegexpStemmer
