@@ -21,7 +21,7 @@ with open('/Users/willdonner/DevsTest/game_urls.csv','r',encoding='latin-1') as 
         ,'bundle','deluxe','episode','fsx','maker','official','puzzle','season','skin','token','ultimate','add'
         ,'beta','chapter','from','ii','ix','my','online','viii','x','awesomenaut','br','digital','hd','iii','iv'
         ,'one','pfrpg','ts','vol','vx','3d','complete','costume','demon','expansion','part','pro','tailer','vi'
-        ,'new','vii','skin','ost','present','fantasy','class','loco']
+        ,'new','vii','skin','ost','present','fantasy','class','loco','two']
         english_word_stop = set(stopwords.words('english'))
         for i in word_box:
             if re.match(r'[A-Za-z]',i):
