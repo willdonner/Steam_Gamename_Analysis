@@ -14,13 +14,21 @@ with open('/Users/willdonner/DevsTest/game_urls.csv','r',encoding='latin-1') as 
         str1=file1.read().lower()
         word_box.extend(nltk.word_tokenize(str1))
         # tokens = (nltk.word_tokenize(str1))
-        # english_punctuation = ['pack']
+        english_punctuation_letter = ['a','b','c','d','e','f','g','h','i','j','k','l'
+        ,'m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+        english_punctuation = ['addon','add-on','demo','dlc','edition','ground','grounds','original','pack','rocksmith','rocksmithâ®','simulator'
+        ,'soundtrack','vr','character','collector','game','ii','ost','remastered','rpg','set','song','steam','train'
+        ,'bundle','deluxe','episode','fsx','maker','official','puzzle','season','skin','token','ultimate','add'
+        ,'beta','chapter','from','ii','ix','my','online','viii','x','awesomenaut','br','digital','hd','iii','iv'
+        ,'one','pfrpg','ts','vol','vx','3d','complete','costume','demon','expansion','part','pro','tailer','vi'
+        ,'new','vii','skin','ost','present','fantasy','class','loco']
         english_word_stop = set(stopwords.words('english'))
         for i in word_box:
             if re.match(r'[A-Za-z]',i):
                 if i not in english_word_stop:
-                    # if i not in english_punctuation:
-                        box.append(i)
+                    if i not in english_punctuation_letter:
+                        if i not in english_punctuation:
+                            box.append(i)
         str3 = str(box)
         str2=re.sub("[^A-Za-z/ ]", "", str3)
             #print(str2)
