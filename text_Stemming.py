@@ -8,6 +8,7 @@ import collections
 word_box =[]
 box = []
 collect_box = []
+text_box =[]
 with open('/Users/willdonner/DevsTest/result1.txt','r',encoding='utf-8') as file1:
     with open('/Users/willdonner/DevsTest/stemm.txt','w',encoding='utf-8') as f:
         str_read = file1.read()
@@ -22,6 +23,8 @@ with open('/Users/willdonner/DevsTest/result1.txt','r',encoding='utf-8') as file
                 # print (stemm_word,stemm.stem(stemm_word))
             #  f.write(stemm.stem(stemm_word))
              box.append(stemm.stem(stemm_word))
+        # text_box = box   
+        # str1 = str(text_box)
         collect_box = collections.Counter(box)
         str1 = str(collect_box)
         f.write(str1)
