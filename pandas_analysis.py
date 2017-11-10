@@ -10,19 +10,19 @@ import re
 listkey = []
 listval = []
 
-with open('/Users/willdonner/DevsTest/stop_words.txt','r',encoding='utf-8') as file1:
+with open('/Users/willdonner/DevsTest/result2.txt','r',encoding='utf-8') as file1:
     str1 = file1.read()
     str2 = re.sub("[^A-Za-z\ ]", "", str1)
     tokenstr = nltk.word_tokenize(str2)
     fdist = nltk.FreqDist(tokenstr)
 
     print(u".........统计出现最多的前30个词..............")
-for key, val in sorted(fdist.items(), key=lambda x:(x[1],x[0]),reverse=True)[:30]:
+for key, val in sorted(fdist.items(), key=lambda x:(x[1],x[0]),reverse=True)[:20]:
     listkey.append(key)
     listval.append(val)
     print(key,val,u' ')
 
-df = pd.DataFrame(listval,columns=[u'次数'])
+df = pd.DataFrame(listval,columns=[u'count'])
 df.index = listkey
 df.plot(kind='bar')
 plt.show()
