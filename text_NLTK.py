@@ -9,8 +9,8 @@ import text_count
 # 不能满足要求 还需要自定义
 word_box =[]
 box=[]
-with open('/Users/willdonner/DevsTest/game_urls.csv','r',encoding='latin-1') as file1:
-    with open('/Users/willdonner/DevsTest/result1.txt','w+',encoding='utf-8') as f:
+with open('/Users/willdonner/DevsTest/only_game_urls.csv','r',encoding='latin-1') as file1:
+    with open('/Users/willdonner/DevsTest/result2.txt','w+',encoding='utf-8') as f:
         str1=file1.read().lower()
         word_box.extend(nltk.word_tokenize(str1))
         # tokens = (nltk.word_tokenize(str1))

@@ -5,8 +5,8 @@
 import os
 import collections
 import re
-with open('/Users/willdonner/DevsTest/stop_words.txt','r',encoding='utf-8') as file1:
-    with open('/Users/willdonner/DevsTest/1234.txt','w',encoding='utf-8') as f:
+with open('/Users/willdonner/DevsTest/result2.txt','r',encoding='utf-8') as file1:
+    with open('/Users/willdonner/DevsTest/wordcloud.txt','w',encoding='utf-8') as f:
         # lines = (line.strip(',') for line in file1)
         # for line in lines:
         # for line in file1:
