@@ -9,8 +9,8 @@ word_box =[]
 box = []
 collect_box = []
 text_box =[]
-with open('/Users/willdonner/DevsTest/result2.txt','r',encoding='utf-8') as file1:
-    with open('/Users/willdonner/DevsTest/stemm2.txt','w',encoding='utf-8') as f:
+with open('/Users/willdonner/DevsTest/gameall/result2.txt','r',encoding='utf-8') as file1:
+    with open('/Users/willdonner/DevsTest/gameall/stemm2.txt','w',encoding='utf-8') as f:
         str_read = file1.read()
         str1 = re.sub("[^A-Za-z\ ]", "", str_read)
         word_box.extend(nltk.word_tokenize(str1))

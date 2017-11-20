@@ -9,19 +9,19 @@ import text_count
 # 不能满足要求 还需要自定义
 word_box =[]
 box=[]
-with open('/Users/willdonner/DevsTest/only_game_urls.csv','r',encoding='latin-1') as file1:
-    with open('/Users/willdonner/DevsTest/result2.txt','w+',encoding='utf-8') as f:
+with open('/Users/willdonner/DevsTest/gameall/19vgsales.csv','r',encoding='latin-1') as file1:
+    with open('/Users/willdonner/DevsTest/gameall/result2.txt','w+',encoding='utf-8') as f:
         str1=file1.read().lower()
         word_box.extend(nltk.word_tokenize(str1))
         # tokens = (nltk.word_tokenize(str1))
         english_punctuation_letter = ['a','b','c','d','e','f','g','h','i','j','k','l'
-        ,'m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+        ,'m','n','o','p','q','r','s','t','u','v','w','x','y','z','/']
         english_punctuation = ['addon','add-on','demo','dlc','edition','ground','grounds','original','pack','rocksmith','rocksmithâ®','simulator'
         ,'soundtrack','vr','character','collector','game','ii','ost','remastered','rpg','set','song','steam','train'
         ,'bundle','deluxe','episode','fsx','maker','official','puzzle','season','skin','token','ultimate','add'
         ,'beta','chapter','from','ii','ix','my','online','viii','x','awesomenaut','br','digital','hd','iii','iv'
         ,'one','pfrpg','ts','vol','vx','3d','complete','costume','demon','expansion','part','pro','tailer','vi'
-        ,'new','vii','skin','ost','present','fantasy','class','loco','two']
+        ,'new','vii','skin','ost','present','fantasy','class','loco','two','/']
         english_word_stop = set(stopwords.words('english'))
         for i in word_box:
             if re.match(r'[A-Za-z]',i):
