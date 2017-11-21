@@ -6,7 +6,8 @@ import pandas as pd
 from numpy import *
 import re
 from pyecharts import Bar
-
+from pyecharts import Page
+from pyecharts import Bar3D
 # str2=[]
 listkey = []
 listval = []
@@ -23,20 +24,27 @@ for key, val in sorted(fdist.items(), key=lambda x:(x[1],x[0]),reverse=True)[:20
     listval.append(val)
     print(key,val,u' ')
 
+page = Page()
 df = pd.DataFrame(listval,columns=[u'count'])
 df.index = listkey
-attr = listkey
-v1 = listval
-bar = Bar("Bar chart", "precipitation and evaporation one year")
-bar.add("precipitation", attr, v1, mark_line=["average"], mark_point=["max", "min"])
-bar.render()
+attr1 = listkey
+v11 = listval
+bar = Bar("Bar - datazoom - top20")
+bar.add("", attr1, v11, is_datazoom_show=True, datazoom_type='both', datazoom_range=[10,20])
+page.add(bar)
 
-attr1 = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
-v11 = [5, 20, 36, 10, 75, 90]
-v21 = [10, 25, 8, 60, 20, 80]
-bar1 = Bar("柱状图数据堆叠示例")
-bar1.add("商家A", attr1, v11, is_stack=True)
-bar1.add("商家B", attr1, v21, is_stack=True)
-bar1.render()
+bar3d = Bar3D("3D 柱状图示例", width=1200, height=600)
+x_axis = ["12a", "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a",
+          "12p", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p"]
+y_axis = ["Saturday", "Friday", "Thursday", "Wednesday", "Tuesday", "Monday", "Sunday"]
+data = [
+    [0, 0, 5]
+    ]
+range_color = ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf',
+               '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+bar3d.add("", x_axis, y_axis, [[d[1], d[0], d[2]] for d in data], is_visualmap=True,
+          visual_range=[0, 20], visual_range_color=range_color, grid3d_width=200, grid3d_depth=80)
+page.add(bar3d)
+page.render()
 # df.plot(kind='bar')
 # plt.show()
