@@ -30,7 +30,7 @@ df = pd.DataFrame(listval,columns=[u'count'])
 df.index = listkey
 attr1 = listkey
 v11 = listval
-bar = Bar("Bar - datazoom - top20")
+bar = Bar("Bar - datazoom - top10")
 bar.add("", attr1, v11, is_datazoom_show=True, datazoom_type='both', datazoom_range=[10,20])
 page.add(bar)
 
@@ -47,7 +47,7 @@ bar3d.add("", x_axis, y_axis, [[d[1], d[0], d[2]] for d in data], is_visualmap=T
           visual_range=[0, 20], visual_range_color=range_color, grid3d_width=200, grid3d_depth=80)
 page.add(bar3d)
 
-pie = Pie("饼图", title_pos='center')
+pie = Pie("饼图Top10", title_pos='center')
 pie.add("", attr1, v11, radius=[40, 75], label_text_color=None, is_label_show=True,
         legend_orient='vertical', legend_pos='left')
 page.add(pie)
