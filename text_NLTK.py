@@ -14,9 +14,10 @@ with open('/Users/willdonner/DevsTest/gameall/19vgsales.csv','r',encoding='latin
         str1=file1.read().lower()
         word_box.extend(nltk.word_tokenize(str1))
         # tokens = (nltk.word_tokenize(str1))
-        english_punctuation_letter = ['a','b','c','d','e','f','g','h','i','j','k','l'
+        english_punctuation_words = ['a','b','c','d','e','f','g','h','i','j','k','l'
         ,'m','n','o','p','q','r','s','t','u','v','w','x','y','z','/']
-        english_punctuation = ['addon','add-on','demo','dlc','edition','ground','grounds','original','pack','rocksmith','rocksmithâ®','simulator'
+        english_stopwords = ['addon','add-on','demo','dlc','edition','ground'
+        ,'grounds','original','pack','rocksmith','rocksmithâ®','simulator'
         ,'soundtrack','vr','character','collector','game','ii','ost','remastered','rpg','set','song','steam','train'
         ,'bundle','deluxe','episode','fsx','maker','official','puzzle','season','skin','token','ultimate','add'
         ,'beta','chapter','from','ii','ix','my','online','viii','x','awesomenaut','br','digital','hd','iii','iv'
